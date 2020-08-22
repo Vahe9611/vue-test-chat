@@ -1,12 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app__conversations">
+      <Conversations />
     </div>
-    <router-view/>
+    <div class="app__thread">
+      <router-view/>
+    </div>
   </div>
 </template>
+
+<script>
+import Conversations from '@/partials/Conversations.vue';
+
+export default {
+  components: {
+    Conversations,
+  },
+};
+</script>
 
 <style>
 #app {

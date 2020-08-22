@@ -1,14 +1,15 @@
 <template>
-  <div class="home">
-    thread
+  <div class="conversations">
+    conversations
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Home',
-  components: {
-  },
+
 };
 </script>
+
+<style>
+
+</style>
