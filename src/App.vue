@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <div id="app__conversations">
+  <div id="app" class="app">
+    <div class="app__conversations">
       <Conversations />
     </div>
     <div class="app__thread">
@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -28,16 +28,4 @@ export default {
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
