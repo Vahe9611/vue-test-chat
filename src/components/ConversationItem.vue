@@ -65,7 +65,10 @@ export default {
   overflow: hidden;
   left: 0;
   padding: 21px 23px;
-  border-bottom: 1px solid #E9EDF2;;
+  border-bottom: 1px solid #E9EDF2;
+  max-height: 80px;
+  display: flex;
+  flex-direction: column;
 
   &__title {
     display: flex;
@@ -89,6 +92,13 @@ export default {
     margin-top: 8px;
     line-height: 18px;
     color: #7D8790;
+
+    p {
+      word-break: break-all;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
   }
 
   &.active {

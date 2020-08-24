@@ -14,7 +14,7 @@
           :id="item.id"
           :name="item.subject"
           :date="new Date(item.created)"
-          :message="item.parts[0].text"
+          :message="item.parts[item.parts.length - 1].text"
           :active="currentId == item.id"
         />
       </li>

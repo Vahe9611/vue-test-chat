@@ -7,7 +7,9 @@
       class="message__text"
       :class="{'message__text_from-me': fromMe}"
     >
-      {{text}}
+      <p>
+        {{text}}
+      </p>
     </div>
     <div class="message__info">
       <span class="message__sender">
@@ -62,8 +64,12 @@ export default {
     padding: 20px;
     background-color: #F6F7F9;
     border-radius: 8px 8px 8px 0px;
-    line-height: 141.62%;
-    color: #475453;
+
+    p {
+      word-break: break-all;
+      line-height: 141.62%;
+      color: #475453;
+    }
 
     &_from-me {
       background: #E9F5F4;
