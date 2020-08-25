@@ -84,27 +84,31 @@ export default {
     },
   },
   methods: {
-    sendMessage() {
+    async sendMessage() {
       if (this.text === '') return;
 
       this.isLoading = true;
-      this.$store.dispatch('sendMessage', {
+
+      const message = {
         userId: 1,
         author: 'Вася',
         text: this.text,
-      }).then(() => {
-        this.isLoading = false;
-        this.text = '';
+      };
 
-        this.scrollBottom();
-      });
+      await this.$store.dispatch('sendMessage', message);
+
+      this.resetState();
+      this.scrollBottom();
     },
 
     emitLoading() {
-      const loader = this.$loading.show({
+      const settings = {
         container: this.$refs.container,
         loader: 'dots',
-      });
+      };
+
+      const loader = this.$loading.show(settings);
+
       // simulate AJAX
       setTimeout(() => {
         loader.hide();
@@ -114,6 +118,11 @@ export default {
     scrollBottom() {
       const { container } = this.$refs;
       container.scrollTop = container.scrollHeight;
+    },
+
+    resetState() {
+      this.isLoading = false;
+      this.text = '';
     },
   },
 };
