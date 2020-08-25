@@ -126,9 +126,10 @@ export default {
           id: parts.length + 1,
           created: new Date(),
         };
-        parts.push(message);
 
-        commit('SET_MESSAGE', parts);
+        const newParts = [...parts, message];
+
+        commit('SET_MESSAGE', newParts);
       });
     },
   },
